@@ -1,0 +1,110 @@
+:root{
+  --drt: 1s;
+}
+body {
+  height: 100vh;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #6bb0d7 -50%, #4d234a 100%);
+  color: #fff;
+  font-family: system-ui, Segoe UI, Roboto, "Helvetica Neue", Arial;
+  text-wrap: nowrap;
+  overflow: hidden;
+}
+
+main{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main *{
+  position: absolute;
+}
+.click-info{
+  bottom: -300px;
+  opacity: 0;
+  transition: opacity 2s ease-in;
+}
+.click-info.active{
+  opacity: 1;
+}
+
+.banner{
+  opacity: 0;
+  text-align: center;
+  position: absolute;
+  top: 40px;
+  transition: all 1s ease-in-out;
+}
+.banner.active{
+  opacity:1;
+}
+section{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main section svg{
+  opacity: 0;
+}
+canvas{
+  top: -372px;
+  touch-action: none;
+}
+
+#confetti{
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.svg-1{
+  animation: fall var(--drt) ease-in-out forwards;
+}
+.svg-2{
+  animation: fall var(--drt) .3s ease-in-out forwards;
+}
+.svg-3{
+  animation: fall var(--drt) .6s ease-in-out forwards;
+}
+.svg-4{
+  animation: fall var(--drt) 1s ease-in-out forwards;
+}
+.svg-5{
+  animation: fall var(--drt) 1.3s ease-in-out forwards;
+}
+.svg-5-2{
+  animation: fall var(--drt) 1.6s ease-in-out forwards;
+}
+.svg-6{
+  animation: fall var(--drt) 2s ease-in-out forwards;
+}
+
+.warning{
+    color: red;
+    display: block;
+  }
+
+@keyframes fall {
+  from{
+    transform:translateY(-1400%);
+    rotate: 30deg;
+    opacity: 0;
+  }
+  1%{
+    opacity: 1;
+  }
+  to{
+    transform:translateY(0);
+    rotate: 0;
+    opacity: 1;
+  }
+}
+@media (min-width: 1024px) {
+  body{
+    display: flex;
+  }
+}
